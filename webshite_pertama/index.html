@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>surat dari habib</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menu Utama: Amplop -->
+    <div id="menu-utama">
+        <div class="amplop" onclick="bukaSurat()">
+            <div class="lipatan"></div>
+        </div>
+    </div>
+
+    <!-- Surat Cinta Pertama -->
+    <div id="surat-cinta">
+        <h1>PESAN DARI KING HABIB</h1>
+        <div class="heart">😂</div>
+        <div class="message">
+            <p>Hai [ZASKIA],Saya Ingin Bertanya Apakah Anda Tau Laba Laba Sunda WKwkwk😆</p>
+            <p>KATA KATA HARI INI</p>
+            <p>Ubur Ubur Ikan Lele Keren Kan Leeee Yeeuuu Sundaaaa😂</p>
+        </div>
+        <button class="tombol-lanjut" onclick="bukaSuratKedua()">Lanjut ke Surat Kedua 🥴</button>
+    </div>
+
+    <!-- Surat Kedua -->
+    <div id="surat-kedua">
+        <h1>Surat Kedua: Pertanyaan Dari Saya Tebak Tebakan 🤔</h1>
+        <div class="heart">😣</div>
+        <div class="message">
+            <p>Makanan Apa Yang Bisa Terbang ?</p>
+        <button class="tombol-jawab" onclick="jawab('ya')">Keroket Sundaeee🧐</button>
+        <button class="tombol-jawab" onclick="jawab('tidak')">Roti Sundaeee😊</button>
+        <div id="respons"></div>
+    </div>
+
+    <script>
+        function bukaSurat() {
+            document.body.classList.add('surat-aktif');
+        }
+        function bukaSuratKedua() {
+            document.body.classList.add('surat-kedua-aktif');
+        }
+        function jawab(jawaban) {
+            const respons = document.getElementById('respons');
+            if (jawaban === 'ya') {
+                respons.innerHTML = 'Yay! Jawaban Kamu Bener Sunda Berarti Anda Bukan Sunda Hama wkwk! 👍🤞 Anda Keren ZASKIA';
+                respons.style.color = '#ff3366';
+                // Tambah animasi hati ekstra
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        const ketawa = document.createElement('div');
+                        hati.innerHTML = '🙌';
+                        hati.style.position = 'absolute';
+                        hati.style.left = Math.random() * 100 + '%';
+                        hati.style.top = '-10px';
+                        hati.style.fontSize = '2em';
+                        hati.style.animation = 'fall 3s linear';
+                        document.body.appendChild(hati);
+                        setTimeout(() => hati.remove(), 3000);
+                    }, i * 500);
+                }
+            } else {
+                respons.innerHTML = 'Haha,  Jawaban Kamu Salah Sunda wkwk! ✌✌ Gapapa Salah Karena MAnusia Tempatnya Salah Jadi Saya Sebagai Jawa Saling Mengingatkan !';
+                respons.style.color = '#ff6699';
+            }
+        }
+    </script>
+</body>
+</html>
